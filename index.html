@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varad Krishna K V | Finance & Commerce Graduate • Amateur Blender 3D Artist</title>
+  <meta name="description" content="Portfolio of Varad Krishna K V — B.Com (Computer Application) graduate specializing in Finance, Accounting, Zoho Books, Tally, and Logistics Management, and an amateur Blender 3D artist based in Thripunnithura, Kochi." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient Background Glows -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="glow-orb finance"></div>
+    <div class="glow-orb blender"></div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="#top" class="brand">
+      <span class="brand-mark">VK</span>
+      <span>Varad Krishna</span>
+    </a>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#blender-lab" class="blender-pill-link">🧊 3D Lab</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" title="Toggle Dark/Light Theme" aria-label="Toggle Theme">☀️</button>
+      <button onclick="window.print()" class="btn btn-outline btn-sm">Print</button>
+      <a href="#contact" class="btn btn-primary btn-sm">Hire Me</a>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="badge-row">
+          <span class="pill-badge finance-badge">
+            <span class="status-dot"></span>
+            Finance &amp; Accounting
+          </span>
+          <span class="pill-badge blender-badge">
+            🧊 Amateur Blender Artist
+          </span>
+        </div>
+
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-title">
+          <span class="gradient-text-finance">Varad Krishna K&nbsp;V</span>
+        </h1>
+        <p class="hero-tagline">
+          Analytical in Finance. <span class="gradient-text-blender">Creative in 3D.</span>
+        </p>
+
+        <p class="hero-subtitle">
+          B.Com (Computer Application) graduate certified in <strong>Zoho Books</strong> &amp; <strong>Logistics Management</strong>, combining financial precision with a creative passion for <strong>Blender 3D</strong> modeling and animation.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Get in Touch</a>
+          <a href="#blender-lab" class="btn btn-blender">View 3D Projects</a>
+          <a href="https://www.linkedin.com/in/varad-krishna" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            LinkedIn ↗
+          </a>
+        </div>
+
+        <div class="quick-metrics">
+          <div class="metric-item">
+            <span class="metric-val">B.Com CA</span>
+            <span class="metric-label">MG University</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-val">CII-YI Award</span>
+            <span class="metric-label">Best Yuva Chair</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-val">Blender 3D</span>
+            <span class="metric-label">Modeling &amp; Animation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Blender 3D Viewport Card -->
+      <div class="hero-visual-card">
+        <div class="viewport-topbar">
+          <div class="viewport-dots">
+            <span></span><span></span><span></span>
+            <strong style="margin-left:6px; color:#f3f5f9;">Blender 3D Viewport — Interactive</strong>
+          </div>
+          <div class="shading-modes" role="group" aria-label="Viewport Shading Mode">
+            <button class="shade-btn" data-shade="wireframe" title="Wireframe Shading">Wire</button>
+            <button class="shade-btn" data-shade="solid" title="Solid Studio Shading">Solid</button>
+            <button class="shade-btn active" data-shade="rendered" title="Material / Rendered Shading">Rendered</button>
+          </div>
+        </div>
+
+        <div class="canvas-wrapper">
+          <canvas id="blenderHeroCanvas"></canvas>
+          <div class="viewport-hud">
+            <div>Collection: <strong id="hudMeshName" style="color:#f97316;">Diner_Donut.001</strong></div>
+            <div>Verts: <span id="hudVerts">480</span> | Faces: <span id="hudFaces">460</span></div>
+            <div>Shading: <span id="hudMode">RENDERED</span></div>
+            <div style="margin-top:4px; opacity:0.75;">🖱️ Drag to Orbit</div>
+          </div>
+          <div class="viewport-axis-badge">
+            <span class="axis-x">X</span>
+            <span class="axis-y">Y</span>
+            <span class="axis-z">Z</span>
+          </div>
+        </div>
+
+        <div class="viewport-footer">
+          <div class="mesh-selector">
+            <button class="mesh-chip active" data-mesh="donut">🍩 Iced Donut</button>
+            <button class="mesh-chip" data-mesh="mug">☕ Diner Coffee Mug</button>
+            <button class="mesh-chip" data-mesh="succulent">🪴 Table Succulent</button>
+          </div>
+          <span style="font-family:var(--font-mono); font-size:0.74rem; color:var(--text-muted);">From My Scenes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Dual Discipline Section -->
+    <section id="about">
+      <div class="section-header">
+        <span class="section-eyebrow">01 / Profile &amp; Vision</span>
+        <h2 class="section-title">Where Financial Precision Meets 3D Creativity</h2>
+        <p class="section-desc">
+          Combining structured commerce fundamentals with computer applications and hands-on 3D digital craftsmanship.
+        </p>
+      </div>
+
+      <div class="dual-grid">
+        <article class="persona-card finance-card">
+          <div class="persona-icon">📈</div>
+          <h3>Finance, Accounting &amp; Operations</h3>
+          <p>
+            Seeking an entry-level role in a finance or accounting organization where I can leverage strong analytical skills, financial knowledge, and a commitment to accuracy to add value, learn from industry professionals, and grow into a high-performing finance professional.
+          </p>
+          <ul class="tag-list">
+            <li>Accounting &amp; Basic Taxation</li>
+            <li>Zoho Books Certified</li>
+            <li>Tally ERP / Prime</li>
+            <li>Logistics Management</li>
+            <li>MS Excel &amp; Reporting</li>
+          </ul>
+        </article>
+
+        <article class="persona-card blender-card">
+          <div class="persona-icon">🎨</div>
+          <h3>Amateur Blender 3D Artist</h3>
+          <p>
+            Outside of balance sheets and ledgers, I channel my observation skills and attention to detail into <strong>Blender 3D</strong>. As an amateur 3D artist, I enjoy building hard-surface and low-poly models, experimenting with procedural shaders, studio lighting, and rendering short turntable animations.
+          </p>
+          <ul class="tag-list">
+            <li>3D Modeling &amp; Topology</li>
+            <li>Cycles &amp; EEVEE Rendering</li>
+            <li>Procedural Shading</li>
+            <li>Lighting &amp; Composition</li>
+            <li>Keyframe Turntables</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills & Proficiencies Section -->
+    <section id="skills">
+      <div class="section-header">
+        <span class="section-eyebrow">02 / Capabilities</span>
+        <h2 class="section-title">Technical, Creative &amp; Core Skills</h2>
+        <p class="section-desc">
+          A well-rounded toolkit spanning accounting software, business communication, and 3D visual creation.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Finance & Accounting -->
+        <div class="skill-group">
+          <h3>💼 Finance &amp; Software</h3>
+          <div class="skill-bar-list">
+            <div>
+              <div class="skill-item-top">
+                <span>Accounting &amp; Basic Taxation</span>
+                <span>Core</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 90%"></div></div>
+            </div>
+            <div>
+              <div class="skill-item-top">
+                <span>Zoho Books (Certified)</span>
+                <span>Advanced</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 88%"></div></div>
+            </div>
+            <div>
+              <div class="skill-item-top">
+                <span>Tally</span>
+                <span>Proficient</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 85%"></div></div>
+            </div>
+            <div>
+              <div class="skill-item-top">
+                <span>MS Office (Excel, Word, PowerPoint)</span>
+                <span>Advanced</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 92%"></div></div>
+            </div>
+            <div>
+              <div class="skill-item-top">
+                <span>Logistics Management</span>
+                <span>Certified</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 82%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blender 3D (Amateur Artist) -->
+        <div class="skill-group">
+          <h3>🧊 Blender 3D (Amateur)</h3>
+          <div class="skill-bar-list">
+            <div>
+              <div class="skill-item-top">
+                <span>3D Mesh Modeling (Low-Poly &amp; Subsurf)</span>
+                <span>Exploring</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill blender-fill" style="width: 78%"></div></div>
+            </div>
+            <div>
+              <div class="skill-item-top">
+                <span>Materials &amp; Shader Nodes</span>
+                <span>Growing</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill blender-fill" style="width: 74%"></div></div>
+            </div>
+            <div>
+              <div class="skill-item-top">
+                <span>Three-Point &amp; HDRI Lighting</span>
+                <span>Practicing</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill blender-fill" style="width: 80%"></div></div>
+            </div>
+            <div>
+              <div class="skill-item-top">
+                <span>EEVEE &amp; Cycles Rendering</span>
+                <span>Hands-on</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill blender-fill" style="width: 76%"></div></div>
+            </div>
+            <div>
+              <div class="skill-item-top">
+                <span>Basic Camera &amp; Object Animation</span>
+                <span>Amateur</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill blender-fill" style="width: 70%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills & Languages -->
+        <div class="skill-group">
+          <h3>🗣️ Soft Skills &amp; Languages</h3>
+          <div class="skill-bar-list">
+            <div>
+              <div class="skill-item-top">
+                <span>Communication &amp; Presentation</span>
+                <span>Award-Winning</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill soft-fill" style="width: 95%"></div></div>
+            </div>
+            <div>
+              <div class="skill-item-top">
+                <span>Observation &amp; Attention to Detail</span>
+                <span>Strong</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill soft-fill" style="width: 92%"></div></div>
+            </div>
+            <div>
+              <div class="skill-item-top">
+                <span>Decision Making &amp; Leadership</span>
+                <span>Proven</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill soft-fill" style="width: 90%"></div></div>
+            </div>
+          </div>
+
+          <h4 style="margin: 22px 0 10px; font-size: 0.9rem; color: var(--text-secondary);">Languages Spoken</h4>
+          <ul class="tag-list">
+            <li>🇬🇧 English (Fluent)</li>
+            <li>🇮🇳 Malayalam (Native)</li>
+            <li>🇮🇳 Hindi (Conversational)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blender 3D Creative Corner -->
+    <section id="blender-lab">
+      <div class="section-header">
+        <span class="section-eyebrow blender-eyebrow">03 / Featured 3D Projects</span>
+        <h2 class="section-title">Blender 3D Projects &amp; Animations</h2>
+        <p class="section-desc">
+          Two complete 3D animated scenes modeled, textured, lit, and rendered in Blender — showcasing material realism, lighting atmosphere, and camera storytelling.
+        </p>
+      </div>
+
+      <!-- Featured Video Projects (Real Renders) -->
+      <div class="featured-projects-grid">
+        <!-- Project 1: The Diner's Blend -->
+        <article class="video-project-card">
+          <div class="video-stage">
+            <video id="videoDinersBlend" src="assets/diners-blend.mp4" autoplay loop muted playsinline preload="metadata"></video>
+            <span class="video-badge-top">🎬 Project 01 • 3D Animation &amp; Shading</span>
+            <div class="video-controls-bar">
+              <button class="video-ctrl-btn" data-video-mute="videoDinersBlend">🔇 Unmute Audio</button>
+              <button class="video-ctrl-btn" data-video-fullscreen="videoDinersBlend">⛶ Fullscreen</button>
+            </div>
+          </div>
+          <div class="video-project-body">
+            <h3>"The Diner's Blend" — Café Tabletop Scene</h3>
+            <p>
+              A stylized photorealistic café scene featuring an iced pink donut with scattered sprinkles sliding beside a handcrafted two-tone wood &amp; ceramic coffee mug against an exposed brick backdrop, complete with ambient café audio and title typography.
+            </p>
+            <ul class="project-highlights">
+              <li><strong>Modeling &amp; Sculpting:</strong> Subdivision surface modeling, organic icing drip sculpting, and procedural sprinkle distribution.</li>
+              <li><strong>Materials &amp; PBR Texturing:</strong> Rough stone countertop, normal-mapped brick wall, glossy ceramic plates, and wood-grain mug shaders.</li>
+              <li><strong>Animation &amp; Post:</strong> Keyframed plate slide with realistic deceleration, shallow depth-of-field camera, title overlay, and audio mix.</li>
+            </ul>
+            <ul class="tag-list">
+              <li>Blender 3D</li>
+              <li>Subsurf &amp; Sculpting</li>
+              <li>PBR Shaders</li>
+              <li>Keyframe Animation</li>
+              <li>Cycles / EEVEE</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Project 2: Golden Hour Dining & Cityscape -->
+        <article class="video-project-card">
+          <div class="video-stage">
+            <video id="videoCityscapeDining" src="assets/cityscape-dining.mp4" autoplay loop muted playsinline preload="metadata"></video>
+            <span class="video-badge-top">🌆 Project 02 • Interior &amp; Lighting Study</span>
+            <div class="video-controls-bar">
+              <button class="video-ctrl-btn" data-video-mute="videoCityscapeDining">🔇 Unmute Audio</button>
+              <button class="video-ctrl-btn" data-video-fullscreen="videoCityscapeDining">⛶ Fullscreen</button>
+            </div>
+          </div>
+          <div class="video-project-body">
+            <h3>"Golden Hour Window" — Interior &amp; Urban Vista</h3>
+            <p>
+              A moody golden-hour architectural interior scene looking past a set marble dining table toward a silhouetted cat perched on the window ledge overlooking warm sunlit high-rise buildings, captured with a smooth cinematic camera push-in.
+            </p>
+            <ul class="project-highlights">
+              <li><strong>Scene Composition:</strong> Layered foreground-to-background depth with dining table props (succulent planter, cutlery holder, woven placemats) framing the window silhouette.</li>
+              <li><strong>Lighting &amp; Atmosphere:</strong> Warm sunset directional lighting casting soft interior shadows alongside fabric curtain translucency and polished marble reflections.</li>
+              <li><strong>Camera &amp; Motion:</strong> Smooth forward camera dolly with shallow depth-of-field rack focus and subtle secondary character motion on the window cat.</li>
+            </ul>
+            <ul class="tag-list">
+              <li>Interior Visualization</li>
+              <li>Golden Hour Lighting</li>
+              <li>Camera Dolly &amp; DoF</li>
+              <li>Marble &amp; Fabric Shaders</li>
+              <li>Storytelling</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div id="blenderGalleryGrid" class="blender-showcase-grid">
+        <!-- Study 1 -->
+        <article class="render-card">
+          <div class="render-preview">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="g1" cx="50%" cy="50%" r="60%">
+                  <stop offset="0%" stop-color="#f97316" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#0d111a" stop-opacity="1"/>
+                </radialGradient>
+              </defs>
+              <rect width="400" height="220" fill="url(#g1)"/>
+              <g stroke="#f97316" stroke-width="1.4" fill="rgba(249,115,22,0.12)">
+                <polygon points="200,38 275,85 275,155 200,192 125,155 125,85"/>
+                <line x1="200" y1="38" x2="200" y2="118"/>
+                <line x1="200" y1="118" x2="275" y2="85"/>
+                <line x1="200" y1="118" x2="125" y2="85"/>
+                <line x1="200" y1="118" x2="200" y2="192"/>
+              </g>
+            </svg>
+            <span class="render-tag">Hard-Surface / Mesh</span>
+          </div>
+          <div class="render-body">
+            <h4>Hard-Surface &amp; Mechanical Studies</h4>
+            <p>Practicing bevel modifiers, boolean workflows, and clean quad topology on props and mechanical forms.</p>
+            <div class="render-meta">
+              <span>Subdivision + Bevel</span>
+              <span>Cycles Render</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Study 2 -->
+        <article class="render-card">
+          <div class="render-preview">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="g2" cx="50%" cy="50%" r="60%">
+                  <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#0d111a" stop-opacity="1"/>
+                </radialGradient>
+              </defs>
+              <rect width="400" height="220" fill="url(#g2)"/>
+              <circle cx="200" cy="110" r="56" fill="rgba(56,189,248,0.18)" stroke="#38bdf8" stroke-width="1.5"/>
+              <ellipse cx="200" cy="110" rx="56" ry="22" fill="none" stroke="#38bdf8" stroke-dasharray="4 3"/>
+              <ellipse cx="200" cy="110" rx="22" ry="56" fill="none" stroke="#38bdf8" stroke-dasharray="4 3"/>
+            </svg>
+            <span class="render-tag">Shading &amp; Lighting</span>
+          </div>
+          <div class="render-body">
+            <h4>Procedural Materials &amp; Studio Lighting</h4>
+            <p>Experimenting with Principled BSDF nodes, metallic roughness maps, glass dispersion, and 3-point rim lighting.</p>
+            <div class="render-meta">
+              <span>Shader Nodes</span>
+              <span>EEVEE / Cycles</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Study 3 -->
+        <article class="render-card">
+          <div class="render-preview">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="g3" cx="50%" cy="50%" r="60%">
+                  <stop offset="0%" stop-color="#10b981" stop-opacity="0.32"/>
+                  <stop offset="100%" stop-color="#0d111a" stop-opacity="1"/>
+                </radialGradient>
+              </defs>
+              <rect width="400" height="220" fill="url(#g3)"/>
+              <g fill="rgba(16,185,129,0.22)" stroke="#10b981" stroke-width="1.5">
+                <rect x="115" y="125" width="28" height="55" rx="3"/>
+                <rect x="158" y="95" width="28" height="85" rx="3"/>
+                <rect x="201" y="70" width="28" height="110" rx="3"/>
+                <rect x="244" y="45" width="28" height="135" rx="3"/>
+              </g>
+            </svg>
+            <span class="render-tag">Motion &amp; Turntable</span>
+          </div>
+          <div class="render-body">
+            <h4>Keyframe Animation &amp; Turntables</h4>
+            <p>Animating camera paths, 150-frame turntable loops, and clean isometric scene compositions.</p>
+            <div class="render-meta">
+              <span>Timeline / Graph Editor</span>
+              <span>1080p MP4</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Local Render Previewer -->
+      <div class="custom-render-uploader">
+        <div>
+          <strong style="display:block; font-family:var(--font-display); font-size:1.02rem;">Have a new Blender render or .MP4 animation ready?</strong>
+          <span style="font-size:0.86rem; color:var(--text-secondary);">Click to preview any of your local Blender images or video renders (e.g., <code>JET0001-0150.mp4</code>) right in this gallery.</span>
+        </div>
+        <label class="btn btn-blender btn-sm" style="cursor:pointer;">
+          + Preview Local Render
+          <input id="renderUploadInput" type="file" accept="image/*,video/mp4,video/webm" multiple style="display:none;" />
+        </label>
+      </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section id="education">
+      <div class="section-header">
+        <span class="section-eyebrow">04 / Academic Background</span>
+        <h2 class="section-title">Qualifications &amp; Certifications</h2>
+        <p class="section-desc">
+          Strong academic grounding in Commerce and Computer Applications paired with industry-focused certifications.
+        </p>
+      </div>
+
+      <div class="edu-cert-grid">
+        <!-- Education Timeline -->
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-top">
+              <span class="timeline-title">Bachelor of Commerce (Computer Application)</span>
+              <span class="score-pill">63% • Graduated</span>
+            </div>
+            <div class="timeline-inst">St. Peter's College, Kolenchery — Mahatma Gandhi (MG) University</div>
+            <div class="timeline-year">2023 – 2026</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-top">
+              <span class="timeline-title">Higher Secondary (Commerce)</span>
+              <span class="score-pill">86%</span>
+            </div>
+            <div class="timeline-inst">Central Board of Secondary Education (CBSE)</div>
+            <div class="timeline-year">Completed in 2023</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-top">
+              <span class="timeline-title">Secondary School Leaving Certificate (SSLC)</span>
+              <span class="score-pill">75%</span>
+            </div>
+            <div class="timeline-inst">Central Board of Secondary Education (CBSE)</div>
+            <div class="timeline-year">Completed in 2021</div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="cert-stack">
+          <div class="cert-card">
+            <div class="cert-badge-icon">🧾</div>
+            <div>
+              <h4>Certification in Zoho Books</h4>
+              <p>Cloud accounting, GST invoicing, bank reconciliation, automated workflows, and financial reporting.</p>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-badge-icon">📦</div>
+            <div>
+              <h4>Certification in Logistics Management</h4>
+              <p>Supply chain coordination, inventory tracking, freight operations, and cost optimization principles.</p>
+            </div>
+          </div>
+
+          <div class="cert-card" style="border-color: rgba(249, 115, 22, 0.3);">
+            <div class="cert-badge-icon" style="background: var(--accent-blender-glow); color: var(--accent-blender);">🧊</div>
+            <div>
+              <h4>Self-Taught Amateur Blender Artist</h4>
+              <p>Continuous hands-on learning in 3D modeling, materials, lighting, and rendering workflows in Blender.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership & Achievements Section -->
+    <section id="achievements">
+      <div class="section-header">
+        <span class="section-eyebrow">05 / Recognition &amp; Impact</span>
+        <h2 class="section-title">Achievements &amp; Leadership</h2>
+        <p class="section-desc">
+          Active student leader, public speaker, and participant in national business, startup, and community forums.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        <article class="bento-item featured">
+          <span class="bento-icon">🏆</span>
+          <h3>Awarded "CII-YI Best Yuva Chair"</h3>
+          <p>
+            Recognized by the Confederation of Indian Industry – Young Indians (CII-YI) for outstanding student leadership, initiative coordination, and impactful campus engagement.
+          </p>
+        </article>
+
+        <article class="bento-item">
+          <span class="bento-icon">🎤</span>
+          <h3>Winner — Future 5.0 Talk</h3>
+          <p>
+            Secured 1st place in the Future 5.0 Talk competition, demonstrating strong presentation, analytical storytelling, and public speaking skills.
+          </p>
+        </article>
+
+        <article class="bento-item">
+          <span class="bento-icon">🚀</span>
+          <h3>Innovation Festival — Startup Mission</h3>
+          <p>
+            Participated in the Innovation Festival organized by Kerala Startup Mission, engaging with emerging technology and entrepreneurial ecosystems.
+          </p>
+        </article>
+
+        <article class="bento-item">
+          <span class="bento-icon">🏛️</span>
+          <h3>CII-YI-BFSI Dhanam Fest, 2024</h3>
+          <p>
+            Active participant in the Banking, Financial Services, and Insurance (BFSI) Dhanam Fest 2024, gaining insights from finance industry leaders.
+          </p>
+        </article>
+
+        <article class="bento-item">
+          <span class="bento-icon">🤝</span>
+          <h3>Class Leader &amp; NSS Volunteer</h3>
+          <p>
+            Served as Class Leader and National Service Scheme (NSS) volunteer, fostering teamwork, community service, and academic coordination.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact & Reference Section -->
+    <section id="contact">
+      <div class="section-header">
+        <span class="section-eyebrow">06 / Get In Touch</span>
+        <h2 class="section-title">Contact &amp; Academic Reference</h2>
+        <p class="section-desc">
+          Available for entry-level opportunities in Finance, Accounting, Taxation, Operations, and creative 3D collaborations.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3 style="font-family:var(--font-display); font-size:1.35rem;">Direct Contact Details</h3>
+          <p style="color:var(--text-secondary); font-size:0.92rem; margin-top:4px;">
+            Based in Thripunnithura, Kochi, Kerala — feel free to reach out via email, phone, or LinkedIn.
+          </p>
+
+          <div class="contact-list">
+            <a href="mailto:varadkrishna2005@gmail.com" class="contact-row">
+              <div class="contact-row-icon">✉️</div>
+              <div>
+                <span class="contact-row-label">Email Address</span>
+                <span class="contact-row-val">varadkrishna2005@gmail.com</span>
+              </div>
+            </a>
+
+            <a href="tel:+919778352565" class="contact-row">
+              <div class="contact-row-icon">📞</div>
+              <div>
+                <span class="contact-row-label">Phone / WhatsApp</span>
+                <span class="contact-row-val">+91 97783 52565</span>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/varad-krishna" target="_blank" rel="noopener noreferrer" class="contact-row">
+              <div class="contact-row-icon">🔗</div>
+              <div>
+                <span class="contact-row-label">LinkedIn Profile</span>
+                <span class="contact-row-val">linkedin.com/in/varad-krishna</span>
+              </div>
+            </a>
+
+            <div class="contact-row">
+              <div class="contact-row-icon">📍</div>
+              <div>
+                <span class="contact-row-label">Location</span>
+                <span class="contact-row-val">Thripunnithura, Ernakulam, Kerala, India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ref-card">
+          <h3 style="font-family:var(--font-display); font-size:1.35rem;">Academic Reference</h3>
+          <p style="color:var(--text-secondary); font-size:0.92rem; margin-top:4px;">
+            Verified academic reference from St. Peter's College, MG University:
+          </p>
+
+          <div class="ref-box">
+            <div class="ref-name">Prof. Eldho Kuriakose</div>
+            <div class="ref-role">Head of Department (HoD) — Dept. of Commerce (SF)</div>
+            <div class="ref-links">
+              <span>🏫 St. Peter's College, Kolenchery</span>
+              <span>📞 Phone: <a href="tel:+919544887718">+91 95448 87718</a></span>
+              <span>✉️ Email: <a href="mailto:commercesf@stpeterscollege.ac.in">commercesf@stpeterscollege.ac.in</a></span>
+            </div>
+          </div>
+
+          <div style="margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border-subtle); font-size: 0.84rem; color: var(--text-muted);">
+            <strong>Declaration:</strong> I hereby declare that the information presented in this portfolio is true to the best of my knowledge.<br />
+            <span style="display:inline-block; margin-top:6px; color:var(--text-secondary);">Place: Thripunnithura • Signed: <em>Varad Krishna K V</em></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 <strong>Varad Krishna K V</strong> • Commerce &amp; Finance Graduate &amp; Amateur Blender 3D Artist • Thripunnithura, Kerala</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
