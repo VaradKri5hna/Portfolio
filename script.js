@@ -18,6 +18,26 @@
     });
   }
 
+  // Mobile Menu Drawer Toggle
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+
+  if (mobileMenuBtn && mobileNavDrawer) {
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = mobileNavDrawer.classList.toggle('open');
+      mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      mobileMenuBtn.textContent = isOpen ? '✕' : '☰';
+    });
+
+    mobileNavDrawer.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileNavDrawer.classList.remove('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.textContent = '☰';
+      });
+    });
+  }
+
   // Interactive 3D Viewport Canvas
   const canvas = document.getElementById('blenderHeroCanvas');
   if (!canvas) return;

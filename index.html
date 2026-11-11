@@ -24,7 +24,7 @@
       <span>Varad Krishna</span>
     </a>
 
-    <nav>
+    <nav id="mobileNavDrawer">
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -37,8 +37,9 @@
 
     <div class="nav-actions">
       <button id="themeToggle" class="icon-btn" title="Toggle Dark/Light Theme" aria-label="Toggle Theme">☀️</button>
-      <button onclick="window.print()" class="btn btn-outline btn-sm">Print</button>
+      <button onclick="window.print()" class="btn btn-outline btn-sm hide-mobile">Print</button>
       <a href="#contact" class="btn btn-primary btn-sm">Hire Me</a>
+      <button id="mobileMenuBtn" class="icon-btn mobile-menu-btn" aria-label="Open Navigation Menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
@@ -97,7 +98,7 @@
         <div class="viewport-topbar">
           <div class="viewport-dots">
             <span></span><span></span><span></span>
-            <strong style="margin-left:6px; color:#f3f5f9;">Blender 3D Viewport — Interactive</strong>
+            <strong class="viewport-title-text" style="margin-left:6px; color:#f3f5f9;">3D Viewport <span class="hide-mobile">— Interactive</span></strong>
           </div>
           <div class="shading-modes" role="group" aria-label="Viewport Shading Mode">
             <button class="shade-btn" data-shade="wireframe" title="Wireframe Shading">Wire</button>
@@ -112,7 +113,7 @@
             <div>Collection: <strong id="hudMeshName" style="color:#f97316;">Diner_Donut.001</strong></div>
             <div>Verts: <span id="hudVerts">480</span> | Faces: <span id="hudFaces">460</span></div>
             <div>Shading: <span id="hudMode">RENDERED</span></div>
-            <div style="margin-top:4px; opacity:0.75;">🖱️ Drag to Orbit</div>
+            <div style="margin-top:4px; opacity:0.75;">👆 Drag / Touch to Orbit</div>
           </div>
           <div class="viewport-axis-badge">
             <span class="axis-x">X</span>
@@ -124,10 +125,10 @@
         <div class="viewport-footer">
           <div class="mesh-selector">
             <button class="mesh-chip active" data-mesh="donut">🍩 Iced Donut</button>
-            <button class="mesh-chip" data-mesh="mug">☕ Diner Coffee Mug</button>
-            <button class="mesh-chip" data-mesh="succulent">🪴 Table Succulent</button>
+            <button class="mesh-chip" data-mesh="mug">☕ Coffee Mug</button>
+            <button class="mesh-chip" data-mesh="succulent">🪴 Succulent</button>
           </div>
-          <span style="font-family:var(--font-mono); font-size:0.74rem; color:var(--text-muted);">From My Scenes</span>
+          <span class="viewport-scene-note">From My Scenes</span>
         </div>
       </div>
     </section>

@@ -1323,8 +1323,78 @@ footer {
   }
 }
 
-/* Responsive */
+.mobile-menu-btn {
+  display: none;
+  font-size: 1.05rem;
+}
+
+.viewport-scene-note {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+#blenderHeroCanvas {
+  touch-action: none;
+}
+
+/* Responsive & Mobile Optimization */
 @media (max-width: 960px) {
+  .navbar {
+    width: calc(100% - 28px);
+    top: 12px;
+    padding: 9px 14px;
+    gap: 10px;
+  }
+
+  .mobile-menu-btn {
+    display: grid;
+  }
+
+  .hide-mobile {
+    display: none !important;
+  }
+
+  #mobileNavDrawer {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-highlight);
+    border-radius: var(--radius-md);
+    padding: 14px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+  }
+
+  #mobileNavDrawer.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .nav-links li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    font-size: 0.88rem;
+  }
+
   .hero,
   .dual-grid,
   .skills-grid,
@@ -1335,22 +1405,212 @@ footer {
   .contact-grid {
     grid-template-columns: 1fr;
   }
+
+  .hero {
+    padding: 112px 0 56px;
+    gap: 36px;
+  }
+
   .bento-item.featured {
     grid-column: span 1;
   }
-  .nav-links {
-    display: none;
-  }
+
   .quick-metrics {
     grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
   }
 }
 
 @media (max-width: 640px) {
-  .hero-title {
-    white-space: normal;
+  .container {
+    padding: 0 16px;
   }
+
+  section {
+    padding: 48px 0;
+  }
+
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  .brand {
+    font-size: 0.96rem;
+    gap: 8px;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    font-size: 0.78rem;
+  }
+
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .nav-actions .btn-sm {
+    padding: 7px 13px;
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    padding: 96px 0 42px;
+    gap: 28px;
+  }
+
+  .badge-row {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .pill-badge {
+    font-size: 0.74rem;
+    padding: 5px 11px;
+  }
+
+  .hero-greeting {
+    font-size: 0.78rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 7.2vw, 2.4rem);
+    white-space: nowrap;
+  }
+
+  .hero-tagline {
+    font-size: 1.15rem;
+    margin-bottom: 14px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.94rem;
+    line-height: 1.65;
+    margin-bottom: 22px;
+  }
+
+  .hero-cta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .hero-cta a:last-child {
+    grid-column: span 2;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 0.88rem;
+  }
+
   .quick-metrics {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding-top: 18px;
+  }
+
+  .metric-val {
+    font-size: 1.02rem;
+  }
+
+  .metric-label {
+    font-size: 0.7rem;
+    white-space: normal;
+    line-height: 1.25;
+  }
+
+  /* 3D Viewport Mobile Tweaks */
+  .viewport-topbar {
+    padding: 8px 12px;
+  }
+
+  .viewport-title-text {
+    font-size: 0.72rem;
+  }
+
+  .canvas-wrapper {
+    height: 260px;
+  }
+
+  .viewport-footer {
+    padding: 10px 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .mesh-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .mesh-chip {
+    text-align: center;
+    padding: 7px 6px;
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .viewport-scene-note {
+    display: none;
+  }
+
+  /* Cards & Sections Mobile Paddings */
+  .persona-card,
+  .skill-group,
+  .video-project-body,
+  .bento-item,
+  .contact-card,
+  .ref-card {
+    padding: 22px 18px;
+  }
+
+  .timeline {
+    padding-left: 18px;
+  }
+
+  .timeline-item {
+    padding: 18px;
+  }
+
+  .timeline-item::before {
+    left: -25px;
+  }
+
+  .video-controls-bar {
+    bottom: 8px;
+    right: 8px;
+    gap: 6px;
+  }
+
+  .video-ctrl-btn {
+    padding: 5px 10px;
+    font-size: 0.7rem;
+  }
+
+  .contact-row {
+    padding: 10px 12px;
+  }
+
+  .contact-row-val {
+    font-size: 0.86rem;
+    word-break: break-word;
+  }
+}
+
+/* Touch Device Active / Ambient Neon Outline */
+@media (hover: none) {
+  .persona-card.finance-card {
+    border-color: rgba(56, 189, 248, 0.45);
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.2);
+  }
+  .persona-card.blender-card,
+  .video-project-card {
+    border-color: rgba(249, 115, 22, 0.48);
+    box-shadow: 0 0 18px rgba(249, 115, 22, 0.22);
   }
 }
