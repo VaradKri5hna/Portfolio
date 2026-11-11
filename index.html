@@ -7,14 +7,18 @@
   <meta name="description" content="Portfolio of Varad Krishna K V — B.Com (Computer Application) graduate specializing in Finance, Accounting, Zoho Books, Tally, and Logistics Management, and an amateur Blender 3D artist based in Thripunnithura, Kochi." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Ambient Background Glows -->
+  <!-- Artistic Ambient Background, Constellation Canvas, Blueprint Grid & Interactive Spotlight -->
   <div class="ambient-bg" aria-hidden="true">
+    <canvas id="artBgCanvas" class="art-bg-canvas"></canvas>
+    <div class="art-grid-overlay"></div>
     <div class="glow-orb finance"></div>
     <div class="glow-orb blender"></div>
+    <div class="glow-orb violet"></div>
+    <div id="cursorSpotlight" class="cursor-spotlight"></div>
   </div>
 
   <!-- Navigation -->
@@ -57,12 +61,12 @@
           </span>
         </div>
 
-        <p class="hero-greeting">Hello, I'm</p>
+        <p class="hero-greeting">✦ Portfolio &amp; 3D Studio</p>
         <h1 class="hero-title">
           <span class="gradient-text-finance">Varad Krishna K&nbsp;V</span>
         </h1>
         <p class="hero-tagline">
-          Analytical in Finance. <span class="gradient-text-blender">Creative in 3D.</span>
+          Analytical in <em class="art-serif">Finance</em>. <span class="gradient-text-blender">Creative in <em class="art-serif">3D Art</em>.</span>
         </p>
 
         <p class="hero-subtitle">
@@ -137,7 +141,7 @@
     <section id="about">
       <div class="section-header">
         <span class="section-eyebrow">01 / Profile &amp; Vision</span>
-        <h2 class="section-title">Where Financial Precision Meets 3D Creativity</h2>
+        <h2 class="section-title">Where Financial <em class="art-serif gradient-text-finance">Precision</em> Meets 3D <em class="art-serif gradient-text-blender">Creativity</em></h2>
         <p class="section-desc">
           Combining structured commerce fundamentals with computer applications and hands-on 3D digital craftsmanship.
         </p>
@@ -387,18 +391,35 @@
           <div class="render-preview">
             <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <radialGradient id="g1" cx="50%" cy="50%" r="60%">
-                  <stop offset="0%" stop-color="#f97316" stop-opacity="0.35"/>
-                  <stop offset="100%" stop-color="#0d111a" stop-opacity="1"/>
+                <radialGradient id="g1" cx="50%" cy="50%" r="65%">
+                  <stop offset="0%" stop-color="#f97316" stop-opacity="0.42"/>
+                  <stop offset="55%" stop-color="#7c2d12" stop-opacity="0.18"/>
+                  <stop offset="100%" stop-color="#090c14" stop-opacity="1"/>
                 </radialGradient>
               </defs>
               <rect width="400" height="220" fill="url(#g1)"/>
+              <!-- Perspective Grid Lines -->
+              <g stroke="rgba(249,115,22,0.18)" stroke-width="0.8">
+                <line x1="40" y1="185" x2="360" y2="185"/>
+                <line x1="75" y1="162" x2="325" y2="162"/>
+                <line x1="200" y1="25" x2="200" y2="205" stroke-dasharray="3 3"/>
+              </g>
+              <!-- Isometric Subdivided Wireframe Cube & Inner Core -->
               <g stroke="#f97316" stroke-width="1.4" fill="rgba(249,115,22,0.12)">
-                <polygon points="200,38 275,85 275,155 200,192 125,155 125,85"/>
-                <line x1="200" y1="38" x2="200" y2="118"/>
-                <line x1="200" y1="118" x2="275" y2="85"/>
-                <line x1="200" y1="118" x2="125" y2="85"/>
-                <line x1="200" y1="118" x2="200" y2="192"/>
+                <polygon points="200,32 282,78 282,156 200,196 118,156 118,78"/>
+                <polygon points="200,58 254,88 254,142 200,170 146,142 146,88" fill="rgba(251,191,36,0.14)" stroke="#fbbf24" stroke-width="1"/>
+                <line x1="200" y1="32" x2="200" y2="116"/>
+                <line x1="200" y1="116" x2="282" y2="78"/>
+                <line x1="200" y1="116" x2="118" y2="78"/>
+                <line x1="200" y1="116" x2="200" y2="196"/>
+              </g>
+              <!-- Glowing Vertex Nodes -->
+              <g fill="#fde047">
+                <circle cx="200" cy="32" r="3"/>
+                <circle cx="282" cy="78" r="3"/>
+                <circle cx="118" cy="78" r="3"/>
+                <circle cx="200" cy="116" r="3.5"/>
+                <circle cx="200" cy="196" r="3"/>
               </g>
             </svg>
             <span class="render-tag">Hard-Surface / Mesh</span>
@@ -418,15 +439,23 @@
           <div class="render-preview">
             <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <radialGradient id="g2" cx="50%" cy="50%" r="60%">
-                  <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35"/>
-                  <stop offset="100%" stop-color="#0d111a" stop-opacity="1"/>
+                <radialGradient id="g2" cx="42%" cy="38%" r="65%">
+                  <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.85"/>
+                  <stop offset="28%" stop-color="#38bdf8" stop-opacity="0.55"/>
+                  <stop offset="68%" stop-color="#6366f1" stop-opacity="0.25"/>
+                  <stop offset="100%" stop-color="#090c14" stop-opacity="1"/>
                 </radialGradient>
               </defs>
-              <rect width="400" height="220" fill="url(#g2)"/>
-              <circle cx="200" cy="110" r="56" fill="rgba(56,189,248,0.18)" stroke="#38bdf8" stroke-width="1.5"/>
-              <ellipse cx="200" cy="110" rx="56" ry="22" fill="none" stroke="#38bdf8" stroke-dasharray="4 3"/>
-              <ellipse cx="200" cy="110" rx="22" ry="56" fill="none" stroke="#38bdf8" stroke-dasharray="4 3"/>
+              <rect width="400" height="220" fill="#090c14"/>
+              <circle cx="200" cy="110" r="88" fill="url(#g2)" opacity="0.35"/>
+              <!-- Orbital Rim Light Rings -->
+              <ellipse cx="200" cy="110" rx="88" ry="26" fill="none" stroke="rgba(249,115,22,0.55)" stroke-width="1.2" transform="rotate(-18 200 110)"/>
+              <ellipse cx="200" cy="110" rx="74" ry="22" fill="none" stroke="rgba(56,189,248,0.65)" stroke-width="1.2" stroke-dasharray="5 4" transform="rotate(22 200 110)"/>
+              <!-- Shader Material Preview Sphere -->
+              <circle cx="200" cy="110" r="52" fill="url(#g2)" stroke="#38bdf8" stroke-width="1.5"/>
+              <ellipse cx="200" cy="110" rx="52" ry="18" fill="none" stroke="rgba(255,255,255,0.35)" stroke-dasharray="3 3"/>
+              <ellipse cx="200" cy="110" rx="18" ry="52" fill="none" stroke="rgba(255,255,255,0.35)" stroke-dasharray="3 3"/>
+              <circle cx="182" cy="90" r="8" fill="rgba(255,255,255,0.65)"/>
             </svg>
             <span class="render-tag">Shading &amp; Lighting</span>
           </div>
@@ -445,18 +474,23 @@
           <div class="render-preview">
             <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <radialGradient id="g3" cx="50%" cy="50%" r="60%">
-                  <stop offset="0%" stop-color="#10b981" stop-opacity="0.32"/>
-                  <stop offset="100%" stop-color="#0d111a" stop-opacity="1"/>
+                <radialGradient id="g3" cx="50%" cy="50%" r="65%">
+                  <stop offset="0%" stop-color="#10b981" stop-opacity="0.38"/>
+                  <stop offset="60%" stop-color="#0ea5e9" stop-opacity="0.14"/>
+                  <stop offset="100%" stop-color="#090c14" stop-opacity="1"/>
                 </radialGradient>
               </defs>
               <rect width="400" height="220" fill="url(#g3)"/>
-              <g fill="rgba(16,185,129,0.22)" stroke="#10b981" stroke-width="1.5">
-                <rect x="115" y="125" width="28" height="55" rx="3"/>
-                <rect x="158" y="95" width="28" height="85" rx="3"/>
-                <rect x="201" y="70" width="28" height="110" rx="3"/>
-                <rect x="244" y="45" width="28" height="135" rx="3"/>
-              </g>
+              <!-- Blender Graph Editor Bezier F-Curve -->
+              <path d="M 55 165 C 125 165, 145 55, 205 55 C 265 55, 285 145, 345 85" fill="none" stroke="#10b981" stroke-width="2.4"/>
+              <path d="M 55 140 C 130 90, 210 175, 345 60" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <!-- Bezier Handles & Keyframe Diamonds -->
+              <line x1="165" y1="55" x2="245" y2="55" stroke="#fde047" stroke-width="1.2"/>
+              <circle cx="165" cy="55" r="3" fill="#fde047"/>
+              <circle cx="245" cy="55" r="3" fill="#fde047"/>
+              <polygon points="205,48 212,55 205,62 198,55" fill="#fde047"/>
+              <polygon points="55,158 62,165 55,172 48,165" fill="#10b981"/>
+              <polygon points="345,78 352,85 345,92 338,85" fill="#10b981"/>
             </svg>
             <span class="render-tag">Motion &amp; Turntable</span>
           </div>

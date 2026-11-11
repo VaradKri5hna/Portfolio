@@ -38,6 +38,75 @@
     });
   }
 
+  // Artistic Cursor Spotlight Tracking
+  const spotlight = document.getElementById('cursorSpotlight');
+  if (spotlight) {
+    window.addEventListener('pointermove', (e) => {
+      spotlight.style.left = `${e.clientX}px`;
+      spotlight.style.top = `${e.clientY}px`;
+    });
+  }
+
+  // Artistic Background Canvas (Floating 3D Polyhedra & Glowing Constellation Nodes)
+  const bgCanvas = document.getElementById('artBgCanvas');
+  if (bgCanvas) {
+    const bgCtx = bgCanvas.getContext('2d');
+    let bgW = 0;
+    let bgH = 0;
+
+    function resizeBg() {
+      bgW = window.innerWidth;
+      bgH = window.innerHeight;
+      bgCanvas.width = bgW;
+      bgCanvas.height = bgH;
+    }
+    window.addEventListener('resize', resizeBg);
+    resizeBg();
+
+    const nodes = Array.from({ length: 34 }, (_, i) => ({
+      x: Math.random() * (bgW || 1200),
+      y: Math.random() * (bgH || 800),
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      r: 1.4 + (i % 3) * 0.9,
+      hue: i % 2 === 0 ? '249, 115, 22' : '56, 189, 248',
+    }));
+
+    function drawBg() {
+      bgCtx.clearRect(0, 0, bgW, bgH);
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i];
+        n.x += n.vx;
+        n.y += n.vy;
+        if (n.x < 0) n.x = bgW;
+        if (n.x > bgW) n.x = 0;
+        if (n.y < 0) n.y = bgH;
+        if (n.y > bgH) n.y = 0;
+
+        for (let j = i + 1; j < nodes.length; j++) {
+          const m = nodes[j];
+          const dist = Math.hypot(n.x - m.x, n.y - m.y);
+          if (dist < 170) {
+            const alpha = (1 - dist / 170) * 0.16;
+            bgCtx.beginPath();
+            bgCtx.moveTo(n.x, n.y);
+            bgCtx.lineTo(m.x, m.y);
+            bgCtx.strokeStyle = `rgba(${n.hue}, ${alpha})`;
+            bgCtx.lineWidth = 0.8;
+            bgCtx.stroke();
+          }
+        }
+
+        bgCtx.beginPath();
+        bgCtx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        bgCtx.fillStyle = `rgba(${n.hue}, 0.55)`;
+        bgCtx.fill();
+      }
+      requestAnimationFrame(drawBg);
+    }
+    drawBg();
+  }
+
   // Interactive 3D Viewport Canvas
   const canvas = document.getElementById('blenderHeroCanvas');
   if (!canvas) return;
@@ -50,7 +119,7 @@
 
   let width = 0;
   let height = 0;
-  let rotX = 0.52;
+  let rotX = -0.52;
   let rotY = 0.65;
   let isDragging = false;
   let lastMouseX = 0;
